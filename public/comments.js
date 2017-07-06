@@ -2,7 +2,7 @@ document.querySelector('#postcomment').value = ""
 function commentpost(){
   var postid = document.querySelector('.postnum').getAttribute("id")
 	var posttext = document.querySelector('#postcomment').value;
-	fetch("http://localhost:3000/commentpost?texttopost=" + posttext + "&idtopost=" + postid)
+	fetch("https://localhost:3000/commentpost?texttopost=" + posttext + "&idtopost=" + postid)
 		.then(function(response){
 			location.reload()
 		});
@@ -47,15 +47,15 @@ function deleteCookie(name) {
   })
 }
 function ratepost(rateop, postid){
-	console.log("http://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop)
+	console.log("https://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop)
 	if(!getCookie(rateop + postid)){
-		fetch("http://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop)
+		fetch("https://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop)
 			.then(function(response){
 				document.cookie = rateop + postid + "=1"
 				location.reload()
 			});
 	}else{
-		fetch("http://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop + "remove")
+		fetch("https://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop + "remove")
 			.then(function(response){
 				deleteCookie(rateop+postid)
 				location.reload()

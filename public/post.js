@@ -1,7 +1,7 @@
 document.querySelector('#ispoved').value = ""
 function textpost(){
 	var posttext = document.querySelector('#ispoved').value;
-	fetch("http://localhost:3000/post?texttopost=" + posttext)
+	fetch("https://localhost:3000/post?texttopost=" + posttext)
 		.then(function(response){
 			location.reload()
 		});
@@ -46,15 +46,15 @@ function deleteCookie(name) {
   })
 }
 function ratepost(rateop, postid){
-	console.log("http://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop)
+	console.log("https://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop)
 	if(!getCookie(rateop + postid)){
-		fetch("http://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop)
+		fetch("https://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop)
 			.then(function(response){
 				document.cookie = rateop + postid + "=1"
 				location.reload()
 			});
 	}else{
-		fetch("http://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop + "remove")
+		fetch("https://localhost:3000/rate?rateid=" + postid + "&rateoperation=" + rateop + "remove")
 			.then(function(response){
 				deleteCookie(rateop+postid)
 				location.reload()
