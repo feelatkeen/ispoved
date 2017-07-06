@@ -1,0 +1,40 @@
+#ispoved {
+    resize: none;
+}
+.header {
+    background-color: #e6f2ff;
+    display: inline-block;
+    padding: 8px;
+    border-style: solid;
+    border-top-color: #003366;
+    border-left-color: #003366;
+    border-right-color: #b3daff;
+    border-bottom-color: #b3daff;
+    border-width: 1px;
+    border-radius: 5px;
+}
+body {
+    text-align: center;
+    font-family: 'Fira Sans Condensed';
+}
+.btn {
+    margin-top: 5px;
+    background: #003366;
+    border-style: outset;
+    color: white;
+    border-color: #b3daff;
+    border-radius: 5px;
+}
+.post {
+    margin-top: 10px;
+    background-color: #e6f2ff;
+    display: inline-block;
+    padding: 8px;
+    border-style: solid;
+    border-top-color: #003366;
+    border-left-color: #003366;
+    border-right-color: #b3daff;
+    border-bottom-color: #b3daff;
+    border-width: 1px;
+    border-radius: 5px;
+}

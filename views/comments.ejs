@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Исповедуйся онлайн</title>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet"> 
+		<link href="comments.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+			<h1>Исповедь онлайн</h1>
+			<h2>Исповедуй свои грешки ;)</h2>
+			<div class="post">
+				<% print.forEach(function(post){ %>
+				<p class="postnum" id="<%= post.id %>">#<%= post.id %></p>
+				<p class="date"><%= post.postdate %></p>
+				<div class="postcontent"><%= post.textpost %></div>
+				<input id="<%= post.id %>" class="btn" type="button" onClick="ratepost('like', this.id)" value="Грешно"><%= post.likes %> <input id="<%= post.id %>" class="btn" type="button" onClick="ratepost('dislike', this.id)" value="Не грешно"><%= post.dislikes %>
+				<% }) %>
+			</div>
+		</div>
+		<br>
+		<div class="postcomment">
+			<textarea id="postcomment"></textarea>
+			<br>
+			<input class="btn" value="Отправить" type="button" onClick="commentpost()">
+		</div>
+		<div class="content">
+			<% print1.forEach(function(post1){ %>
+			<div class="comment">
+				<p class="date"><%= post1.commentdate %></p>
+				<div class="commentcontent"><%= post1.commenttext %></div>
+			</div>
+			<br>
+			<% }) %>
+		</div>
+		<script src="comments.js"></script>
+	</body>
+</html>

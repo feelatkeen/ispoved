@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Исповедуйся онлайн</title>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet"> 
+		<link href="index.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+			<h1>Исповедь онлайн</h1>
+			<h2>Исповедуй свои грешки ;)</h2>
+			<textarea id="ispoved"></textarea>
+			<br>
+			<input type="submit" class="btn" value="Отправить" onClick="textpost()">
+		</div>
+		<div class="content">
+			<% print.forEach(function(post){ %>
+			<div class="post" id="<%= post.id %>">
+				<p class="postnum" id="<%= post.id %>">#<%= post.id %></p>
+				<p class="date"><%= post.postdate %></p>
+				<div class="postcontent"><%= post.textpost %></div>
+				<input id="<%= post.id %>" class="btn" type="button" onClick="ratepost('like', this.id)" value="Грешно"><%= post.likes %> <input id="<%= post.id %>" class="btn" type="button" onClick="ratepost('dislike', this.id)" value="Не грешно"><%= post.dislikes %>
+				<br>
+				<a href="comments?postid=<%= post.id %>"><input type="submit" class="btn" value="Комменты"></a>
+			</div>
+			<br>
+			<% }) %>
+		</div>
+		<script src="post.js"></script>
+	</body>
+</html>

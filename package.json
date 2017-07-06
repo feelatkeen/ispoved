@@ -1,0 +1,15 @@
+{
+  "name": "ispoved",
+  "version": "1.0.0",
+  "description": "stories",
+  "main": "ispoved.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stories",
+    "anonymous"
+  ],
+  "author": "feelatkeen",
+  "license": "UNLICENSED"
+}
