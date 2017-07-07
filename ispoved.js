@@ -45,7 +45,7 @@ app.get('/comments', function(req, res){
 		if(err){
 			console.error(err);
 		}else{
-			var query = connection.query('SELECT * FROM comments WHERE id=' + postid + " ORDER BY ", function(err1,result1){
+			var query = connection.query('SELECT * FROM comments WHERE id=' + postid, function(err1,result1){
 				if(err1){
 					console.error(err1)
 				}else{
